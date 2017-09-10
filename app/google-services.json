@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "693606463659",
+    "firebase_url": "https://mazap-601a8.firebaseio.com",
+    "project_id": "mazap-601a8",
+    "storage_bucket": "mazap-601a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693606463659:android:35419b5f61450c51",
+        "android_client_info": {
+          "package_name": "br.com.ma.android.mazap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693606463659-0p53a7gdmqnhn4n13b1qfjend7stvvro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ma.android.mazap",
+            "certificate_hash": "f2443b44dd4b836c77dfb9aaefc134af58667384"
+          }
+        },
+        {
+          "client_id": "693606463659-qkl3o1e2s7mkd6mf0dadlle3taa17p98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu13MkkkLMAEue9RbjU4b94KeHWFtHzM0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693606463659-qkl3o1e2s7mkd6mf0dadlle3taa17p98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
