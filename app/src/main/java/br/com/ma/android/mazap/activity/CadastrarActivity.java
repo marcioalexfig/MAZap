@@ -13,7 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 
 import br.com.ma.android.mazap.R;
 import br.com.ma.android.mazap.helper.FireBase;
@@ -26,6 +25,7 @@ public class CadastrarActivity extends AppCompatActivity {
     EditText senha;
     Button cadastrar;
     FirebaseAuth autenticacao;
+    Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +45,9 @@ public class CadastrarActivity extends AppCompatActivity {
                       && email.getText().toString().length()>0
                         && senha.getText().toString().length()>0 ) {
 
-                    Usuario usuario = new Usuario(nome.getText().toString(), email.getText().toString(), senha.getText().toString());
+                    usuario = new Usuario(nome.getText().toString(), email.getText().toString(), senha.getText().toString());
 
-                    cadastrarUsuario(usuario);
+                    cadastrarUsuario();
 
 
                 } else {
@@ -62,7 +62,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
     }
 
-    private boolean cadastrarUsuario(Usuario usuario) {
+    private boolean cadastrarUsuario() {
         try {
             autenticacao = FireBase.autenticacaoFirebase();
             autenticacao.createUserWithEmailAndPassword(
@@ -73,15 +73,20 @@ public class CadastrarActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(CadastrarActivity.this, "Cadastro efetuado com sucesso!", Toast.LENGTH_LONG).show();
+
+                        //Pega o id do firebase e poe no objeto
+                        usuario.setId(task.getResult().getUser().getUid());
+
+                        //Salvar no banco de dados
+                        usuario.salvar();
+
                     } else {
                         Toast.makeText(CadastrarActivity.this, "Ocorreu um erro no Cadastro, tente novamente!", Toast.LENGTH_LONG).show();
                     }
                 }
             });
 
-            //Gravando no banco de dados
-            DatabaseReference ref = FireBase.referenciaFireBase();
-            ref.child("nome_usuario").setValue(usuario.getNome());
+
 
         } catch (Exception e){
             Log.e("Erro no Cadastro", e.getLocalizedMessage());
