@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_pesquisa"
+        android:orderInCategory="300"
+        android:title="@string/item_menu_pesquisa"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/item_adicionar_contato"
+        android:icon="@drawable/ic_person_add"
+        android:orderInCategory="400"
+        android:title="@string/item_menu_adicionar_contato"
+        app:showAsAction="ifRoom" />
+
+    <item android:title="@string/item_menu_config"
+        android:id="@+id/item_configuracoes"
+        android:orderInCategory="500"
+        android:icon="@drawable/ic_build"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/item_sair"
+        android:title="@string/item_menu_sair"
+        android:orderInCategory="900"
+        android:icon="@drawable/ic_power_settings_new"
+        app:showAsAction="never"
+        />
+
+
+</menu>

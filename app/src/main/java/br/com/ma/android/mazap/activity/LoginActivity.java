@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.ma.android.mazap.R;
-import br.com.ma.android.mazap.helper.FireBase;
+import br.com.ma.android.mazap.helper.FireBaseConfiguracoes;
 import br.com.ma.android.mazap.modelo.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validarLogin() {
-        autenticacao = FireBase.autenticacaoFirebase();
+        autenticacao = FireBaseConfiguracoes.autenticacaoFirebase();
         autenticacao.signInWithEmailAndPassword(
                 this.usuario.getEmail(),
                 this.usuario.getSenha()
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
      * se o mesmo estiver logado, será redirecionado para a tela principal
      */
     public void verificarUsuarioLogado(){
-        autenticacao = FireBase.autenticacaoFirebase();
+        autenticacao = FireBaseConfiguracoes.autenticacaoFirebase();
         if (autenticacao.getCurrentUser() != null){
             abrirTelaInicial();
         }

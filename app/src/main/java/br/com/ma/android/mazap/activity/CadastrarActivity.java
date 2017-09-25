@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import br.com.ma.android.mazap.R;
-import br.com.ma.android.mazap.helper.FireBase;
+import br.com.ma.android.mazap.helper.FireBaseConfiguracoes;
 import br.com.ma.android.mazap.modelo.Usuario;
 
 public class CadastrarActivity extends AppCompatActivity {
@@ -67,7 +67,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
     private boolean cadastrarUsuario() {
 
-        autenticacao = FireBase.autenticacaoFirebase();
+        autenticacao = FireBaseConfiguracoes.autenticacaoFirebase();
         autenticacao.createUserWithEmailAndPassword(
                 usuario.getEmail(),
                 usuario.getSenha()

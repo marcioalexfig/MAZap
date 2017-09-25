@@ -6,11 +6,7 @@
     android:layout_height="match_parent"
     tools:context="br.com.ma.android.mazap.activity.MainActivity">
 
-    <Button
-        android:id="@+id/btn_sair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAIR"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="49dp" />
+    <include android:id="@+id/toolbar" layout="@layout/toobar"/>
+
+
 </android.support.constraint.ConstraintLayout>

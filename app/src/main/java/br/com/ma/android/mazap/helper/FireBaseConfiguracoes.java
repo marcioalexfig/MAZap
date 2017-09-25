@@ -8,7 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by alex on 05/09/17.
  */
 
-public class FireBase {
+public class FireBaseConfiguracoes {
 
     private static DatabaseReference referenciaFirebase;
     private static FirebaseAuth autenticacao;

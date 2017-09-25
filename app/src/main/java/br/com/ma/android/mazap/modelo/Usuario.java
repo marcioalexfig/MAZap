@@ -3,7 +3,7 @@ package br.com.ma.android.mazap.modelo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
-import br.com.ma.android.mazap.helper.FireBase;
+import br.com.ma.android.mazap.helper.FireBaseConfiguracoes;
 
 /**
  * Created by alex on 05/09/17.
@@ -25,7 +25,7 @@ public class Usuario {
 
     public void salvar() {
         //Gravando no banco de dados - Firebase
-        DatabaseReference ref = FireBase.referenciaFireBase();
+        DatabaseReference ref = FireBaseConfiguracoes.referenciaFireBase();
         ref.child("usuarios").child( getId() ).setValue( this );
     }
 
