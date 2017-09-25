@@ -55,10 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 break;
-
         }
-
         return super.onOptionsItemSelected(item);
+
     }
 
     public void sair(){

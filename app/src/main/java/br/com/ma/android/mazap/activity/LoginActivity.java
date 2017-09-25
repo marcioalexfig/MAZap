@@ -43,10 +43,16 @@ public class LoginActivity extends AppCompatActivity {
         btnLogar.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                usuario = new Usuario();
-                usuario.setEmail(email.getText().toString());
-                usuario.setSenha(senha.getText().toString());
-                validarLogin();
+
+                if (email.getText().length() > 0 && senha.getText().length() > 0) {
+                    usuario = new Usuario();
+                    usuario.setEmail(email.getText().toString());
+                    usuario.setSenha(senha.getText().toString());
+                    validarLogin();
+                } else {
+                    Toast.makeText(LoginActivity.this, "E-mail e senha precisam ser preenchidos!", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
